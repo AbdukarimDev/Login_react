@@ -1,36 +1,45 @@
-import React from 'react'
-import { Link } from "react-router-dom";
+import React from "react";
+import { NavLink } from "react-router-dom";
+import styled from "styled-components";
 
-const Navbar = () => {
+
+/* ✅ Wrapper NI O‘ZINGIZ YARATASIZ */
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+  border: 1px solid blue;
+  :hover {
+    text-decoration: underline;
+    color: blue;
+  }
+
+  div {
+    border: 1px solid green;
+    padding: 5px 10px;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  a.active div {
+    background: black;
+    color: white;
+  }
+`;
+
+function Navbar() {
   return (
-    <div 
-      style={{
-        display: "flex",
-        justifyContent: "space-evenly",
-        padding: "20px"
-      }}
-    >
-      <Link to="/home" style={{ textDecoration: "none", color: "black" }}>
-        <div style={{ cursor: "pointer", fontSize: "large" }}>Home</div>
-      </Link>
-
-      <Link to="/product" style={{ textDecoration: "none", color: "black" }}>
-        <div style={{ cursor: "pointer", fontSize: "large" }}>Product</div>
-      </Link>
-
-      <Link to="/about" style={{ textDecoration: "none", color: "black" }}>
-        <div style={{ cursor: "pointer", fontSize: "large" }}>About</div>
-      </Link>
-
-      <Link to="/contact" style={{ textDecoration: "none", color: "black" }}>
-        <div style={{ cursor: "pointer", fontSize: "large" }}>Contact</div>
-      </Link>
-
-      <Link to="/profile" style={{ textDecoration: "none", color: "black" }}>
-        <div style={{ cursor: "pointer", fontSize: "large" }}>Profile</div>
-      </Link>
-    </div>
-  )
+    <Wrapper>
+      <NavLink to="/home"> <div>Home</div> </NavLink>
+      <NavLink to="/product"> <div>Products</div> </NavLink>
+      <NavLink to="/contact"> <div>Contact</div> </NavLink>
+      <NavLink to="/about"> <div>About</div> </NavLink>
+      <NavLink to="/profile"> <div>Profile</div> </NavLink>
+    </Wrapper>
+  );
 }
 
 export default Navbar;
