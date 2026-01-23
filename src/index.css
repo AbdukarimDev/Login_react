@@ -3,3 +3,81 @@
   margin: 0;
   box-sizing: border-box;
 }
+.navbar-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar {
+  width: 100%;
+  max-width: 1200px;     /* katta ekranda tarqalmasin */
+  padding: 20px 24px;
+
+  display: flex;
+  align-items: center;
+}
+
+/* chap */
+.logo {
+  flex: 1;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* o‘rta */
+.menu {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  list-style: none;
+}
+
+/* o‘ng */
+.icon {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 20px;
+}
+
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* SHAPE (overlay) */
+.overlay {
+  position: absolute;
+  inset: 0; /* top:0 left:0 right:0 bottom:0 */
+
+  background: rgba(0, 0, 0, 0.45); /* qora shaffof shape */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  text-align: center;
+}
+
+.overlay h1 {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.overlay p {
+  font-size: 18px;
+  letter-spacing: 1px;
+}
