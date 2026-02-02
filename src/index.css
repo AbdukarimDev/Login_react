@@ -57,26 +57,57 @@
 }
 
 /* SHAPE (overlay) */
-.overlay {
+
+.div-shape {
   position: absolute;
-  inset: 0; /* top:0 left:0 right:0 bottom:0 */
+  background-color: white;
+  width: 540px;
+height: 390px;
+opacity: 80%;
+display: flex;
+padding-top: 20px;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+margin-top: 120px;
+align-items: center;
+padding-left: 25px;
+  
+position: absolute;
+  inset: 0;
 
-  background: rgba(0, 0, 0, 0.45); /* qora shaffof shape */
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  color: white;
-  text-align: center;
+  
+  
+}
+.div-shape h1 {
+  color: #2F2E2E;
+font-family: "Playfair Display";
+font-size: 47px;
+font-style: normal;
+font-weight: 900;
+line-height: normal;
 }
 
-.overlay h1 {
-  font-size: 48px;
-  margin-bottom: 12px;
+.div-shape p {
+  color: #2F2E2E;
+font-family: Inter;
+font-size: 32px;
+font-style: normal;
+font-weight: 200;
+line-height: normal;
+
 }
 
+.Services-txt {
+  color: #2F2E2E;
+text-align: center;
+font-family: "Playfair Display";
+font-size: 51px;
+font-style: normal;
+font-weight: 900;
+line-height: normal;
+}
 .overlay p {
   font-size: 18px;
   letter-spacing: 1px;

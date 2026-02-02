@@ -8,6 +8,9 @@ import ContactPage from './contact'
 import ProfilePage from './profile'
 import Notfound from './notfound'
 import LoginComp from './login'
+import MuiPractice from './contrast/muiPractice'
+import ApiConnect from './contrast/apiConnect'
+import AdvancedApi from './contrast/advancedApi'
 
 const RouterComp = () => {
   return (
@@ -22,6 +25,9 @@ const RouterComp = () => {
       <Route path="/contact" element={<ContactPage/>} />
       <Route path="/profile" element={<ProfilePage/>} />
       <Route path='*' element={<Notfound/>}/>
+      <Route path='/muipractice' element={<MuiPractice/>}/>
+      <Route path='/apiConnect' element={<ApiConnect/>}/>
+      <Route path='advancedApi' element={<AdvancedApi/>}/>
     </Routes>
     </div>
   )

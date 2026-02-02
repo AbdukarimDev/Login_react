@@ -29,9 +29,53 @@ const HomeComponent = () => {
   <div className='hero'>
     <img src={BgrImg} alt="" />
     <div className='overlay'>
-      <h1>Modern Architecture</h1>
+      <div className='div-shape'>
+        <h1>Best Solution For 
+Your Home</h1>
+<p>Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit ut 
+aliquam, purus sit amet </p>
+      </div>
+      
     </div>
   </div>
+
+<div 
+style={{
+  width: "100%",
+  height: "284px",
+  background: "rgba(37, 77, 77, 0.20)",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  padding: "12px",
+  display: "flex",
+  flexDirection:"column"}}>
+
+    <h1 className='Services-txt'>Our Services</h1>
+
+    <div style={{
+      display: "flex",
+      border: "1px solid blue",
+      width: "1240px",
+height: "170px"
+    }}>                        {/*shape 3 talik */}
+      <div style={{
+        flex: "1",
+        border: "1px solid red"
+      }}></div>
+      <div style={{
+        flex: "1",
+        border: "1px solid yellow"
+      }}></div>
+      <div style={{
+        flex: "1",
+        border: "1px solid green"
+      }}></div>
+    </div>
+
+</div>
+
   </div>  //container
   );
 };
