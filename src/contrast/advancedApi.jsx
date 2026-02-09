@@ -11,14 +11,14 @@ const AdvancedApi = () => {
     const [users, setUsers] = useState([]);
     const [search, setSearch] = useState("");
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState([null]);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchUsers = async() => {
             
             try {
                 setLoading(true);
-                const res = await fetch("https://jsonplaceholder.typicode.com/users");
+                const res = await fetch("https://jsonplaceholder.typicode.com/posts");
                 if (!res.ok) {
                     throw new Error("Failed to fetch users api");
                 }
@@ -36,14 +36,15 @@ const AdvancedApi = () => {
     
     console.log(users)
 
-    const filteredUser = users.filter((user) => {
-        const keyword = search.toLocaleLowerCase()
-        return (
-             user.name.toLowerCase().includes(keyword) ||
-             user.email.toLowerCase().includes(keyword)
-             );
-             
-    });
+   const filteredUser = users.filter((post) => {
+  const keyword = search.toLowerCase();
+  return (
+    post.title.toLowerCase().includes(keyword) ||
+    post.body?.toLowerCase().includes(keyword)
+  );
+});
+
+
   return (
     <div style={{padding: "5px 20px"}}>
         <h1>User List</h1>
@@ -51,21 +52,17 @@ const AdvancedApi = () => {
         value={search}
         onChange={(e) => setSearch(e.target.value)}/>
         {loading && <img src={loadingImg} alt="loading"/>}
-        {filteredUser.map((user, index) => {
-        return (
-            <Card key={index}>
-                  
-          <div key={index}>
-            <p>{user.name}</p>
-            <p>{user.username}</p>
-            <p>{user.phone}</p>
-            <p>{user.email}</p>
-            <p>{user.website}</p> 
-          </div>
-          
-          </Card>
-        );
-      })}
+        {loading && <img src={loadingImg} alt="loading" />}
+
+{!loading && filteredUser.map((user) => (
+  <Card key={user.id}>
+    <p>{user.title}</p>
+    <p>{user.body}</p>
+    <p>{user.id}</p>
+    <p>{user.userId}</p>
+  </Card>
+))}
+
     </div>
   );
 };
